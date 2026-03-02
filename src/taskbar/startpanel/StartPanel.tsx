@@ -26,7 +26,7 @@ import { Item } from './body/list/Item';
 import { ProgramList } from './body/ProgramList';
 import { PlacesList } from './body/PlacesList';
 import { PlacesItem } from './body/PlacesItem';
-import profilePicture from '../../assets/avatars/profile.png';
+import { PROFILE, FS_USER_PATH } from '../../config/profile';
 import { Avatar } from './header/Avatar';
 import { Header } from './header/Header';
 import { Body } from './body/Body';
@@ -94,8 +94,11 @@ export const StartPanel: React.FC<StartPanelProps> = ({ onClose, ...rest }) => {
   return (
     <StyledStartPanel {...rest}>
       <Header>
-        <Avatar src={profilePicture} />
-        Casper Lindschouw
+        <Avatar
+          src={PROFILE.profileImage}
+          onError={(e) => { (e.target as HTMLImageElement).src = PROFILE.profileImageFallback; }}
+        />
+        {PROFILE.name}
       </Header>
       <Body>
         <ProgramList>
@@ -103,8 +106,20 @@ export const StartPanel: React.FC<StartPanelProps> = ({ onClose, ...rest }) => {
             title="Internet"
             subtitle="Internet Explorer"
             icon={internetExplorerIcon}
+            onClick={() => {
+              const app = programManager.installed.find(p => p.metadata.name === 'Internet Explorer');
+              if (app) run(app);
+            }}
           />
-          <Item title="E-mail" subtitle="Outlook Express" icon={outlookIcon} />
+          <Item
+            title="E-mail"
+            subtitle="Outlook Express"
+            icon={outlookIcon}
+            onClick={() => {
+              const app = programManager.installed.find(p => p.metadata.name === 'Contact');
+              if (app) run(app);
+            }}
+          />
           <hr />
           {programs}
           <Spacer />
@@ -119,7 +134,7 @@ export const StartPanel: React.FC<StartPanelProps> = ({ onClose, ...rest }) => {
             onClick={() =>
               run(
                 ExplorerApp,
-                '/C:/Documents and Settings/Casper Lindschouw/My Documents'
+                `${FS_USER_PATH}/My Documents`
               )
             }
           />
@@ -130,7 +145,7 @@ export const StartPanel: React.FC<StartPanelProps> = ({ onClose, ...rest }) => {
             onClick={() =>
               run(
                 ExplorerApp,
-                '/C:/Documents and Settings/Casper Lindschouw/Recent'
+                `${FS_USER_PATH}/Recent`
               )
             }
           />
@@ -141,7 +156,7 @@ export const StartPanel: React.FC<StartPanelProps> = ({ onClose, ...rest }) => {
             onClick={() =>
               run(
                 ExplorerApp,
-                '/C:/Documents and Settings/Casper Lindschouw/My Documents/My Pictures'
+                `${FS_USER_PATH}/My Documents/My Pictures`
               )
             }
           />
@@ -152,7 +167,7 @@ export const StartPanel: React.FC<StartPanelProps> = ({ onClose, ...rest }) => {
             onClick={() =>
               run(
                 ExplorerApp,
-                '/C:/Documents and Settings/Casper Lindschouw/My Documents/My Music'
+                `${FS_USER_PATH}/My Documents/My Music`
               )
             }
           />

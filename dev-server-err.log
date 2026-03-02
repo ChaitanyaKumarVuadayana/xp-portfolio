@@ -1,0 +1,5 @@
+(node:36268) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Browserslist: caniuse-lite is outdated. Please run the following command: `npx browserslist --update-db`
+'wmic' is not recognized as an internal or external command,
+operable program or batch file.

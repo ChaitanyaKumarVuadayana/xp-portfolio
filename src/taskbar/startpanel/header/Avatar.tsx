@@ -11,5 +11,6 @@ export const Avatar = styled.img.attrs({
   background: #ccd6eb;
   border-radius: 5px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-  padding: 2px;
+  padding: 0;
+  object-fit: cover;
 `;

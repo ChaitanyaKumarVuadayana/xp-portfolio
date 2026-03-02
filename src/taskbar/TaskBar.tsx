@@ -4,6 +4,7 @@ import { NotificationTray } from './tray/NotificationTray';
 import { StartButton } from './StartButton';
 import { WindowList } from './windowlist/WindowList';
 import { Clock } from './tray/Clock';
+import { VolumeControl } from './tray/VolumeControl';
 import useOnClickOutside from 'use-onclickoutside';
 import styled from 'styled-components/macro';
 
@@ -58,6 +59,7 @@ const TaskBar: React.FC<TaskBarProps> = ({ height }) => {
       />
       <WindowList />
       <NotificationTray>
+        <VolumeControl />
         <Clock />
       </NotificationTray>
     </StyledTaskBar>

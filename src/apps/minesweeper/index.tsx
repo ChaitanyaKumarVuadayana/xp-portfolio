@@ -13,8 +13,8 @@ export const MinesweeperApp: Program = async function () {
     title: MinesweeperApp.metadata.name,
     icon: MinesweeperApp.metadata.icon,
     rect: {
-      left: Math.max(0, window.innerWidth * 0.2 - windowSize.width / 2),
-      top: Math.max(0, window.innerHeight * 0.3 - windowSize.height / 2),
+      left: Math.max(0, window.innerWidth - 320),
+      top: Math.max(0, window.innerHeight - 360),
       ...windowSize,
     },
     minSize: {

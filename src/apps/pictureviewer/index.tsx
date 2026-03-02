@@ -11,10 +11,10 @@ export const PictureViewerApp: Program = async function (args) {
     title: PictureViewerApp.metadata.name,
     icon: PictureViewerApp.metadata.icon,
     rect: {
-      left: 100,
-      top: 100,
-      width: 500,
-      height: 400,
+      left: Math.max(0, window.innerWidth - 440),
+      top: 15,
+      width: 420,
+      height: 340,
     },
     minSize: {
       width: 100,

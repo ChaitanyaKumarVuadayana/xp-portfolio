@@ -13,6 +13,14 @@ const UsableArea = styled.div`
   flex-flow: column nowrap;
 `;
 
+/* Inner wrapper: takes all remaining height after the TaskBar */
+const DesktopArea = styled.div`
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+`;
+
 const StyledDesktopEnvironment = styled(UsableArea).attrs({
   // done with inline style to avoid flickering in dev builds
   style: {
@@ -24,10 +32,10 @@ const StyledDesktopEnvironment = styled(UsableArea).attrs({
 
 export const DesktopEnvironment: FC = () => (
   <StyledDesktopEnvironment>
-    <UsableArea>
-      <Desktop path="/C:/Documents and Settings/Casper Lindschouw/Desktop" />
+    <DesktopArea>
+      <Desktop path="/C:/Documents and Settings/Vudayana Chaitanya Kumar/Desktop" />
       <WindowRenderer />
-    </UsableArea>
+    </DesktopArea>
     <TaskBar height={30} />
   </StyledDesktopEnvironment>
 );
