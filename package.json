@@ -38,7 +38,7 @@
     "prestart": "yarn index-filesystem",
     "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "prebuild": "yarn index-filesystem",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+    "build": "CI=false NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "index-filesystem": "node scripts/make-filesystem-index.js"
