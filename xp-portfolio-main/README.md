@@ -52,6 +52,7 @@ I love React, but I have done no projects that prove that. Windows XP also has a
 
 * Windows XP VM
 * Resource Hacker / ResBuild / MSStyles Converter
+* [Resource Cracker](https://www.pelock.com/products/resource-cracker)
 * ImageMagick
 * Gimp
 * Magnifixer / KMag
